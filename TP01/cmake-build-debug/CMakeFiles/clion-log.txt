@@ -1,0 +1,4 @@
+"D:\APPS\jetbrains\clion\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\jaech\OneDrive\Documents\cours\CPP\cpp-but-school\TP01
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/jaech/OneDrive/Documents/cours/CPP/cpp-but-school/TP01/cmake-build-debug

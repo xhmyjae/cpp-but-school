@@ -6,5 +6,6 @@
 
 void displayMenu();
 bool isNumber(std::string str);
+bool isGrade(int number);
 
 #endif //CPP_MAIN_H

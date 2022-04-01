@@ -8,3 +8,9 @@ bool isNumber(std::string str){
     }
     return true;
 }
+
+bool isGrade(int number) {
+    if (number < 0 || number > 20)
+        return false;
+    return true;
+}

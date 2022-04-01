@@ -10,7 +10,7 @@ void enterGrades() {
         std::cin >> number;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        while (!isNumber(number) || 0 <= std::stoi(number) && std::stoi(number) <= 20) {
+        while (!isNumber(number) || !isGrade(stoi(number))) {
             std::cout << "Entrer une note comprise entre 0 et 20" << std::endl;
             std::cin >> number;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -19,12 +19,12 @@ void enterGrades() {
         grades[i] = stoi(number);
     }
 
-    std::cout << "Moyenne des notes : " << getAverage(grades[10], 10) << std::endl;
-    std::cout << "Note minimale : " << getMin(grades[10], 10) << std::endl;
-    std::cout << "Note maximale : " << getMax(grades[10], 10) << std::endl;
+    std::cout << "Moyenne des notes : " << getAverage(grades, 10) << std::endl;
+    std::cout << "Note minimale : " << getMin(grades, 10) << std::endl;
+    std::cout << "Note maximale : " << getMax(grades, 10) << std::endl;
 }
 
-int getAverage(int grades[], int n) {
+float getAverage(int grades[], int n) {
     int sum = 0;
 
     for (int i = 0; i < n; i++) {

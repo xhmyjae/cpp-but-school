@@ -22,6 +22,11 @@ void factorialDisplay() {
         } else {
             int fact = factorial(stoi(number));
             std::cout << "Le resultat est : " << fact << std::endl;
+            if (tryAgain()) {
+                factorialDisplay();
+            } else {
+                displayMenu();
+            }
         }
     } else {
         std::cout << "Vous n'avez pas entre un nombre" << std::endl;

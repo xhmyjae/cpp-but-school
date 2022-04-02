@@ -24,6 +24,11 @@ void strongNumber() {
         } else {
             std::cout << "Le nombre " << number << " n'est pas un nombre fort." << std::endl;
         }
+        if (tryAgain()) {
+            strongNumber();
+        } else {
+            displayMenu();
+        }
     } else {
         std::cout << "Vous n'avez pas entre un nombre" << std::endl;
         strongNumber();

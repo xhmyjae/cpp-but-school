@@ -6,6 +6,7 @@
 
 void displayMenu();
 bool isNumber(std::string str);
-bool isGrade(int number);
+bool isGrade(int number, int min, int max);
+bool tryAgain();
 
 #endif //CPP_MAIN_H

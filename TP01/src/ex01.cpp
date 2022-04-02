@@ -17,6 +17,11 @@ void evenNumbersFor() {
         }
         int sum = sumEvenNumbersFor(stoi(number));
         std::cout << std::endl << "La somme des nombres pairs de 1 a " + std::to_string(sum) + " est : " + std::to_string(sum);
+        if (tryAgain()) {
+            ex01MenuDisplay();
+        } else {
+            displayMenu();
+        }
     } else {
         std::cout << "Vous n'avez pas entre un nombre" << std::endl;
         evenNumbersFor();
@@ -52,6 +57,11 @@ void evenNumbersWhile() {
         }
         int sum = sumEvenNumbersWhile(stoi(number));
         std::cout << std::endl << "La somme des nombres pairs de 1 a " + std::to_string(sum) + " est : " + std::to_string(sum);
+        if (tryAgain()) {
+            ex01MenuDisplay();
+        } else {
+            displayMenu();
+        }
     } else {
         std::cout << "Vous n'avez pas entre un nombre" << std::endl;
         evenNumbersWhile();

@@ -28,6 +28,7 @@ void menu() {
                 break;
             case 5:
                 std::cout << std::endl << "Exercice 5" << std::endl;
+                mysteryNumberDisplay();
                 break;
             case 0:
                 std::cout << std::endl << "Au revoir!" << std::endl;

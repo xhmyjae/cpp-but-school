@@ -1,6 +1,12 @@
 #include "ex02.h"
 #include "../main.h"
 
+/**
+ * Renvoie la factorielle de n
+ *
+ * @param n Le nombre dont on veut obtenir la factorielle.
+ * @return La factorielle de n.
+ */
 int factorial(int n) {
     int result = 1;
     for (int i = 1; i <= n; i++) {
@@ -9,6 +15,9 @@ int factorial(int n) {
     return result;
 }
 
+/**
+ * Afficher la factorielle d'un nombre
+ */
 void factorialDisplay() {
     std::string number;
     std::cout << "Entrer un nombre : " << std::endl;

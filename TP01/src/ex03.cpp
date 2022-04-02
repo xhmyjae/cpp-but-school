@@ -2,6 +2,12 @@
 #include "ex02.h"
 #include "../main.h"
 
+/**
+ * Prends un nombre, renvoie vrai si la somme de la factorielle de chaque chiffre est egale au nombre
+ *
+ * @param number Le nombre a verifier.
+ * @return Une valeur booleenne.
+ */
 bool isStrongNumber(int number) {
     int sum = 0;
     int temp = number;
@@ -12,6 +18,9 @@ bool isStrongNumber(int number) {
     return sum == number;
 }
 
+/**
+ * Verifie si le nombre entre par l'utilisateur est un nombre fort. Si c'est le cas, la fonction affiche le nombre.
+ */
 void strongNumber() {
     std::string number;
     std::cout << "Entrer un nombre : " << std::endl;

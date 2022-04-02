@@ -1,6 +1,9 @@
 #include "ex01.h"
 #include "../main.h"
 
+/**
+ * Afficher tous les nombres pairs entre 1 et le nombre entre par l'utilisateur via une boucle for
+ */
 void evenNumbersFor() {
     std::string number;
     std::cout << "Entrer un nombre: " << std::endl;
@@ -28,6 +31,12 @@ void evenNumbersFor() {
     }
 }
 
+/**
+ * "Somme de tous les nombres pairs jusqu'a celui donne. avec une boucle for"
+ *
+ * @param number Le nombre a additionner.
+ * @return La somme de tous les nombres pairs de 1 au nombre donne.
+ */
 int sumEvenNumbersFor(int number) {
     int sum = 0;
 
@@ -39,6 +48,9 @@ int sumEvenNumbersFor(int number) {
     return sum;
 }
 
+/**
+ * Afficher tous les nombres pairs entre 1 et le nombre entre par l'utilisateur via une boucle while
+ */
 void evenNumbersWhile() {
     std::string number;
     std::cout << "Entrer un nombre: " << std::endl;
@@ -68,6 +80,12 @@ void evenNumbersWhile() {
     }
 }
 
+/**
+ * "Somme de tous les nombres pairs jusqu'a celui donne. avec une boucle while"
+ *
+ * @param number Le nombre a additionner.
+ * @return La somme de tous les nombres pairs de 1 au nombre donne.
+ */
 int sumEvenNumbersWhile(int number) {
     int sum = 0;
 
@@ -82,6 +100,9 @@ int sumEvenNumbersWhile(int number) {
     return sum;
 }
 
+/**
+ * Afficher un menu et demander a l'utilisateur de choisir une option
+ */
 void ex01Menu() {
     std::string choice;
 
@@ -108,6 +129,9 @@ void ex01Menu() {
     }
 }
 
+/**
+ * Afficher le menu et demander a l'utilisateur de choisir une option via la func ex01Menu()
+ */
 void ex01MenuDisplay() {
     std::cout << "Version de l'exercice a executer :" << std::endl;
     std::cout << "1. Version utilisant for" << std::endl;

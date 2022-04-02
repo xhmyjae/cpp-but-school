@@ -1,6 +1,9 @@
 #include "ex05.h"
 #include "../main.h"
 
+/**
+ * Affiche une plage de nombres et demande à l'utilisateur de deviner le nombre
+ */
 void mysteryNumberDisplay() {
     std::string mysteryNum;
     std::cout << "Entrer un nombre : " << std::endl;
@@ -16,6 +19,15 @@ void mysteryNumberDisplay() {
     }
 }
 
+/**
+ * La fonction prend deux nombres, un nombre negatif et un nombre positif. Il genere ensuite un nombre aleatoire entre le
+ * nombre negatif et le nombre positif. L'utilisateur est ensuite invite a deviner le nombre. Si la supposition de
+ * l'utilisateur est erronee, l'utilisateur est invite a deviner à nouveau. Si l'estimation de l'utilisateur est correcte,
+ * l'utilisateur est informe du nombre d'essais qu'il a fallu pour deviner le nombre
+ *
+ * @param negNum Le nombre le plus bas que le nombre mystere peut etre.
+ * @param posNum Le nombre maximum que l'utilisateur peut deviner.
+ */
 void mysteryNumber(int negNum, int posNum) {
     int randNum = rand()%(posNum - negNum + 1) + negNum;
     int tries;
@@ -47,9 +59,13 @@ void mysteryNumber(int negNum, int posNum) {
             displayMenu();
         }
     }
-
 }
 
+/**
+ * La fonction demande à l'utilisateur d'entrer un numero et vérifie si le numero est valide
+ *
+ * @return Le numero entre par l'utilisateur.
+ */
 int inputNumber() {
     std::string number;
     std::cout << "Entrer un nombre :" << std::endl;

@@ -1,6 +1,9 @@
 #include "../main.h"
 #include "menu.h"
 
+/**
+ * Afficher le menu et demander à l'utilisateur de choisir une option
+ */
 void menu() {
     std::string choice;
 
@@ -41,10 +44,11 @@ void menu() {
         std::cout << "Choix invalide" << std::endl;
         menu();
     }
-
-
 }
 
+/**
+ * Afficher le menu
+ */
 void displayMenu() {
     std::cout << "Liste des exercices" << std::endl << std::endl;
     for (int i = 1; i <= 5; i++) {

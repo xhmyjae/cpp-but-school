@@ -1,6 +1,9 @@
 #include "ex04.h"
 #include "../main.h"
 
+/**
+ * Saisissez 10 notes et affichez la moyenne, le minimum et le maximum
+ */
 void enterGrades() {
     int grades[10];
 
@@ -29,6 +32,13 @@ void enterGrades() {
     }
 }
 
+/**
+ * Prend un tableau d'entiers, renvoie la moyenne des entiers
+ *
+ * @param grades un tableau d'entiers representant les notes
+ * @param n le nombre de notes dans le tableau
+ * @return La moyenne des notes.
+ */
 float getAverage(int grades[], int n) {
     int sum = 0;
 
@@ -39,6 +49,13 @@ float getAverage(int grades[], int n) {
     return sum / n;
 }
 
+/**
+ * "Renvoie la valeur minimale dans le tableau."
+ *
+ * @param grades un tableau d'entiers representant les notes
+ * @param n le nombre de notes dans le tableau
+ * @return La valeur minimale dans le tableau.
+ */
 int getMin(int grades[], int n) {
     int min = grades[0];
 
@@ -51,6 +68,13 @@ int getMin(int grades[], int n) {
     return min;
 }
 
+/**
+ * "Renvoie la valeur maximale dans le tableau."
+ *
+ * @param grades un tableau d'entiers
+ * @param n le nombre de notes dans le tableau
+ * @return La valeur maximale dans le tableau.
+ */
 int getMax(int grades[], int n) {
     int max = grades[0];
 

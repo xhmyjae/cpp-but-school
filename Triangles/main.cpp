@@ -2,14 +2,11 @@
 
 int main() {
     std::cout << "Choisir la 1re valeur : " << std::endl;
-    int a;
-    std::cin >> a;
+    int a = inputNumber();
     std::cout << "Choisir la 2e valeur : " << std::endl;
-    int b;
-    std::cin >> b;
+    int b = inputNumber();
     std::cout << "Choisir la 3e valeur : " << std::endl;
-    int c;
-    std::cin >> c;
+    int c = inputNumber();
 
     PForme::Triangle triangle;
     triangle.setA(a);

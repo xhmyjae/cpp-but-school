@@ -3,6 +3,6 @@
 
 #include "src/Triangles.h"
 
-int main();
+int inputNumber();
 
 #endif //TP02_MAIN_H

@@ -8,5 +8,6 @@ void displayMenu();
 bool isNumber(std::string str);
 int inputNumber();
 bool tryAgain();
+void TP2_3();
 
 #endif //CPP_MAIN_H

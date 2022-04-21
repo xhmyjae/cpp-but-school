@@ -4,4 +4,9 @@
 #ifndef TP02_MAIN_H
 #define TP02_MAIN_H
 
+void displayMenu();
+bool isNumber(std::string str);
+int inputNumber();
+bool tryAgain();
+
 #endif //TP02_MAIN_H

@@ -15,6 +15,7 @@ void menu() {
         switch (stoi(choice)) {
             case 1:
                 std::cout << std::endl << "Exercice 1" << std::endl << std::endl;
+                ex01();
                 break;
             case 2:
                 std::cout << std::endl << "Exercice 2" << std::endl << std::endl;

@@ -1,69 +1,112 @@
 #include "ex02.h"
 #include "../main.h"
-#include <cstring>
 
-enum Sexe {INCONNUE=0, MASCULIN=1, FEMININ=2};
+Personne *creer_personne() {
+    Personne *p = new Personne;
 
-struct Personne {
-    int numero;
-    char * nom[10];
-    Sexe sexe;
-};
-
-Personne * creer_personne(int numero, char * nom, Sexe sexe) {
-    Personne * p = new Personne;
-    p->numero = numero;
-    strcpy(p->nom, nom);
-    p->sexe = sexe;
     return p;
 }
 
-void detruire_personne(Personne * p) {
-    p = nullptr;
+/**
+ * Print le nom, l'age et le sexe d'une personne.
+ *
+ * @param p un pointeur de la struct Personne
+ */
+void afficher_personne(Personne *p) {
+    std::printf("\tnumero : %d\n", p->numero);
+    std::printf("\tnom : %s\n", p->nom);
+    switch (p->sexe) {
+        case MASCULIN:
+            std::printf("\tsexe : masculin\n");
+
+            break;
+        case FEMININ:
+            std::printf("\tsexe : feminin\n");
+
+            break;
+        default:
+            std::printf("\tsexe : inconnu\n");
+            break;
+    }
+}
+
+/**
+ * Supprime le pointeur de personne.
+ *
+ * @param p un pointeur de la struct Personne
+ */
+void detruire_personne(Personne *p) {
     delete p;
 }
 
-Personne * initialiser_personne(Personne * p) {
-    p->numero = inputNumber();
-    p->nom = inputString();
-    int sexe = inputNumber();
-    switch(sexe) {
-        case 1:
-            p->sexe = MASCULIN;
-            break;
-        case 2:
-            p->sexe = FEMININ;
-            break;
-        default:
-            p->sexe = INCONNUE;
-            break;
-    }
-    return p;
+/**
+ * Initialise la structure Personne.
+ *
+ * @param numero le numero de la personne
+ * @param nom un pointeur vers une string
+ * @param sexe 0 pour inconnu, 1 pour homme, 2 pour femme
+ * @param p un pointeur de la struct Personne
+ */
+void initialise_personne(int numero, char *nom, Sexe sexe, Personne *p) {
+    p->numero = numero;
+    strcpy(p->nom, nom);
+    p->sexe = sexe;
 }
 
-void afficher_personne(Personne * p) {
-    std::cout << "Numero : " << p->numero << std::endl;
-    std::cout << "Nom : " << p->nom << std::endl;
-    std::cout << "Sexe : " << p->sexe << std::endl;
-}
-
-char * nom_personne(Personne * p) {
+/**
+ * Renvoit le nom d'une personne
+ *
+ * @param p a pointer to a Personne structure
+ *
+ * @return Un pointeur vers le premier caractère de la chaîne.
+ */
+char *nom_personne(Personne *p) {
     return p->nom;
 }
 
-Sexe sexe_personne(Personne * p) {
-    return p->sexe;
-}
-
-int numero_personne(Personne * p) {
+/**
+ * Il renvoie le numéro d'une personne
+ *
+ * @param p a pointer to a Personne structure
+ *
+ * @return Le numéro de la personne.
+ */
+int numero_personne(Personne *p) {
     return p->numero;
 }
 
-void Test_Function() {
+/**
+ * Il renvoie le sexe d'une personne
+ *
+ * @param p a pointer to a Personne structure
+ *
+ * @return Le sexe de la personne.
+ */
+Sexe sexe_personne(Personne *p) {
+    return p->sexe;
+}
 
-    if(tryAgain()) {
-        Test_Function();
-    } else {
-        displayMenu();
+void test_personne() {
+    Personne *p = creer_personne();
+    initialise_personne(17, "test", FEMININ, p);
+
+    std::cout << "Utilisation de la fonction affiche_personne" << std::endl;
+    afficher_personne(p);
+
+    std::cout << "Utilisation des autres fonctions" << std::endl;
+    std::printf("\tnom : %s\n", nom_personne(p));
+    std::printf("\tnumero : %d\n", numero_personne(p));
+    switch (sexe_personne(p)) {
+        case 1:
+            std::printf("\tsexe : masculin\n");
+            break;
+        case 2:
+            std::printf("\tsexe : feminin\n");
+            break;
+        default:
+            std::printf("\tsexe : inconnu\n");
+            break;
     }
+
+    detruire_personne(p);
 }

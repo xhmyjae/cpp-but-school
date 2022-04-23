@@ -61,8 +61,8 @@ int inputNumber() {
     return stoi(number);
 }
 
-std::string inputString() {
-    std::string str;
+char inputString() {
+    char str;
     std::cout << "Entrer un nom :" << std::endl;
     std::cin >> str;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

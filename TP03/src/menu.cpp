@@ -19,6 +19,7 @@ void menu() {
                 break;
             case 2:
                 std::cout << std::endl << "Exercice 2" << std::endl << std::endl;
+                Test_Function();
                 break;
             case 0:
                 std::cout << std::endl << "Au revoir!" << std::endl;

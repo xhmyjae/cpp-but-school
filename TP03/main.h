@@ -7,6 +7,7 @@
 void displayMenu();
 bool isNumber(std::string str);
 int inputNumber();
+std::string inputString();
 bool tryAgain();
 
 #endif //TP02_MAIN_H

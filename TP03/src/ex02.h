@@ -1,3 +1,5 @@
+#include <string.h>
+
 #ifndef TP02_EX02_H
 #define TP02_EX02_H
 

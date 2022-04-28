@@ -1,7 +1,7 @@
 #include "../include/ex02.h"
 #include "../main.h"
 #include "../include/Couleurs.h"
-
+//unsigned ex02NS::Carte::NbCreation=0;
 /**
  * Constructeur de copie.
  *
@@ -101,28 +101,53 @@ bool const ex02NS::Carte::operator!=(ex02NS::Carte & c) {
 }
 
 /**
+ * Renvoie une référence à une chaîne constante
+ *
+ * @return La valeur de la carte.
+ */
+std::string const& ex02NS::Carte::getValeur() {
+    return this->valeur;
+}
+
+/**
  * Cree deux cartes, les affiche, les compare, puis affiche le nombre de cartes créées
  */
 void ex02() {
     std::cout << "Jeu de cartes" << std::endl;
-    ex02NS::Carte c1(ex02NS::Couleur::PIQUE, "As");
+    ex02NS::Carte c1(ex02NS::Couleur::PIQUE, "Ace");
     std::cout << "Carte 1 : " << std::endl;
-    c1.afficher();
-    ex02NS::Carte c2(c1);
-    c2.setType(ex02NS::Couleur::TREFLE);
-    c2.setValeur((std::string const&) "Queen");
-    std::cout << "Carte 2 : " << std::endl;
-    c2.afficher();
+    try {
+        if (!isCard(c1.getValeur())) {
+            throw std::invalid_argument("La carte n'est pas valide");
+        } else {
+            c1.afficher();
+            ex02NS::Carte c2(c1);
+            c2.setType(ex02NS::Couleur::TREFLE);
+            c2.setValeur((std::string const&) "Queen");
+            std::cout << "Carte 2 : " << std::endl;
+            try {
+                if (!isCard(c2.getValeur())) {
+                    throw std::invalid_argument("La carte n'est pas valide");
+                } else {
+                    c2.afficher();
 
-    if (c1 != c2) {
-        std::cout << "Les cartes sont differentes" << std::endl;
-    } else {
-        std::cout << "Les cartes sont identiques" << std::endl;
+                    if (c1 != c2) {
+                        std::cout << "Les cartes sont differentes" << std::endl;
+                    } else {
+                        std::cout << "Les cartes sont identiques" << std::endl;
+                    }
+
+                    std::cout << "Nombre de cartes creees : " << ex02NS::Carte::NbCreation << std::endl;
+
+                    c1.~Carte();
+                }
+            } catch (std::exception s) {
+                std::cout << "Erreur : " << s.what() << std::endl;
+            }
+        }
+    } catch (std::exception s) {
+        std::cout << "Erreur : " << s.what() << std::endl;
     }
-
-    std::cout << "Nombre de cartes creees : " << ex02NS::Carte::NbCreation << std::endl;
-
-    c1.~Carte();
 
     if (tryAgain()) {
         ex02();

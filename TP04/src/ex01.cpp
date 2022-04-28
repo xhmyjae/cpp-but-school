@@ -107,7 +107,7 @@ void ex01()
     if (c1.equal(c2)) {
         std::cout << "Carte 1 est egale a Carte 2" << std::endl;
     } else {
-        std::cerr << "Cartes non egales" << std::endl;
+        std::cout << "Cartes non egales" << std::endl;
         std::cout << "Carte 1 : " << std::endl;
         c1.afficher();
         std::cout << "Carte 2 : " << std::endl;

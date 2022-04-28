@@ -24,6 +24,7 @@ namespace ex01NS {
         void const afficher();
         bool const equal(Carte&);
         void affecter(Carte&);
+        std::string const& getValeur();
     };
 }
 
@@ -40,7 +41,7 @@ namespace ex02NS {
         Couleur couleur;
         std::string valeur;
     public:
-        static unsigned NbCreation;
+        static inline unsigned NbCreation = 0;
         Carte(Couleur, std::string const&);
         Carte(Carte&);
         ~Carte();
@@ -49,9 +50,10 @@ namespace ex02NS {
         bool const operator!=(Carte&);
         void setType(Couleur);
         void setValeur(std::string const&);
+        std::string const& getValeur();
         void const afficher();
 
-        static unsigned GetNbCreation();
+        static inline unsigned GetNbCreation();
 
         friend std::ostream& operator<<(std::ostream&, Carte&);
     };

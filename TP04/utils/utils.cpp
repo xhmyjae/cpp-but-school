@@ -60,3 +60,10 @@ int inputNumber() {
     }
     return stoi(number);
 }
+
+bool isCard(std::string str) {
+    if (str == "Ace" || str == "2" || str == "3" || str == "4" || str == "5" || str == "6" || str == "7" || str == "8" || str == "9" || str == "10" || str == "Jack" || str == "Queen" || str == "King") {
+        return true;
+    }
+    return false;
+}

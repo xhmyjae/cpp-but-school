@@ -1,4 +1,6 @@
 #include "ex03.h"
+#include "../../TP04/include/ex03.h"
+
 
 typedef std::shared_ptr<double> ptrStdDouble;
 

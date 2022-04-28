@@ -84,37 +84,70 @@ bool const ex01NS::Carte::equal(Carte& c)
 }
 
 /**
+ * Renvoie une référence à une chaîne constante
+ *
+ * @return La valeur de la carte.
+ */
+std::string const& ex01NS::Carte::getValeur() {
+    return this->valeur;
+}
+
+/**
  * Cree deux cartes, les affiche, change la deuxième carte, l'affiche à nouveau, puis compare les deux cartes
  */
 void ex01()
 {
     std::cout << "Jeu de cartes" << std::endl;
-    ex01NS::Carte c1(ex01NS::Couleur::PIQUE, "As");
+    ex01NS::Carte c1(ex01NS::Couleur::PIQUE, "Ace");
     std::cout << "Carte 1 : " << std::endl;
-    c1.afficher();
-    ex01NS::Carte c2(c1);
-    c2.setType(ex01NS::Couleur::TREFLE);
-    c2.setValeur((std::string const&) "Queen");
-    std::cout << "Carte 2 : " << std::endl;
-    c2.afficher();
-    ex01NS::Carte c3(ex01NS::Couleur::PIQUE,"2");
-    c2.affecter(c3);
-    std::cout << "Carte 2 : " << std::endl;
-    c2.afficher();
-    std::cout << "Carte 3 : " << std::endl;
-    c3.afficher();
+    try {
+        if (!isCard(c1.getValeur())) {
+            throw std::invalid_argument("La carte n'est pas valide");
+        } else {
+            c1.afficher();
+            ex01NS::Carte c2(c1);
+            c2.setType(ex01NS::Couleur::TREFLE);
+            c2.setValeur((std::string const&) "Queen");
+            std::cout << "Carte 2 : " << std::endl;
+            try {
+                if (!isCard(c2.getValeur())) {
+                    throw std::invalid_argument("La carte n'est pas valide");
+                } else {
+                    c2.afficher();
+                    ex01NS::Carte c3(ex01NS::Couleur::PIQUE,"2");
+                    try {
+                        if (!isCard(c3.getValeur())) {
+                            throw std::invalid_argument("La carte n'est pas valide");
+                        } else {
+                            c2.affecter(c3);
+                            std::cout << "Carte 2 : " << std::endl;
+                            c2.afficher();
+                            std::cout << "Carte 3 : " << std::endl;
+                            c3.afficher();
 
-    if (c1.equal(c2)) {
-        std::cout << "Carte 1 est egale a Carte 2" << std::endl;
-    } else {
-        std::cout << "Cartes non egales" << std::endl;
-        std::cout << "Carte 1 : " << std::endl;
-        c1.afficher();
-        std::cout << "Carte 2 : " << std::endl;
-        c2.afficher();
+                            if (c1.equal(c2)) {
+                                std::cout << "Carte 1 est egale a Carte 2" << std::endl;
+                            } else {
+                                std::cout << "Cartes non egales" << std::endl;
+                                std::cout << "Carte 1 : " << std::endl;
+                                c1.afficher();
+                                std::cout << "Carte 2 : " << std::endl;
+                                c2.afficher();
+                            }
+
+                            c1.~Carte();
+                        }
+                    } catch (std::exception s) {
+                        std::cout << "Erreur : " << s.what() << std::endl;
+                    }
+                }
+            } catch (std::exception s) {
+                std::cout << "Erreur : " << s.what() << std::endl;
+            }
+        }
+    } catch (std::exception s) {
+        std::cout << "Erreur : " << s.what() << std::endl;
     }
-
-    c1.~Carte();
 
     if (tryAgain()) {
         ex01();

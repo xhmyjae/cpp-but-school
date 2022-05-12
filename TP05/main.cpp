@@ -1,6 +1,7 @@
 #include "main.h"
+#include "include/menu.h"
 
 int main() {
-    displayMenu();
+    Menu::execute();
     return 0;
 }

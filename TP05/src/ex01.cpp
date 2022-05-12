@@ -1,6 +1,7 @@
 #include "../include/ex01.h"
 #include "../main.h"
 #include "../utils/utils.h"
+#include "../include/menu.h"
 
 
 /**
@@ -174,4 +175,10 @@ void ex01()
     e.rentrerNote();
     e.afficher();
     e.afficherNote();
+
+    if (tryAgain()) {
+        ex01();
+    } else {
+        Menu::execute();
+    }
 }

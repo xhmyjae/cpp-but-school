@@ -79,7 +79,8 @@ ex01NS::Sexe ex01NS::Personne::getSexe()
 /**
  * Demande a l'utilisateur d'entrer 10 notes, puis les stocke dans le tableau de notes (grades)
  */
-void ex01NS::Etudiant::rentrerNote() {
+void ex01NS::Etudiant::rentrerNote()
+{
     for (int i = 0; i < 10; i++) {
         std::string number;
         std::cout << "Entrer la note n." << i+1 << " : " << std::endl;
@@ -103,7 +104,8 @@ void ex01NS::Etudiant::rentrerNote() {
  * @param n le nombre de notes dans le tableau
  * @return La moyenne des notes.
  */
-float ex01NS::Etudiant::getAverage() {
+float ex01NS::Etudiant::getAverage()
+{
     int sum = 0;
 
     for (int i : this->grades) {
@@ -120,7 +122,8 @@ float ex01NS::Etudiant::getAverage() {
  * @param n le nombre de notes dans le tableau
  * @return La valeur minimale dans le tableau.
  */
-int ex01NS::Etudiant::getMin() {
+int ex01NS::Etudiant::getMin()
+{
     int min = this->grades[0];
 
     for (int i : this->grades) {
@@ -139,7 +142,8 @@ int ex01NS::Etudiant::getMin() {
  * @param n le nombre de notes dans le tableau
  * @return La valeur maximale dans le tableau.
  */
-int ex01NS::Etudiant::getMax() {
+int ex01NS::Etudiant::getMax()
+{
     int max = this->grades[0];
 
     for (int i : this->grades) {
@@ -156,7 +160,8 @@ int ex01NS::Etudiant::getMax() {
  *
  * @param grades le tableau des notes
  */
-void ex01NS::Etudiant::afficherNote() {
+void ex01NS::Etudiant::afficherNote()
+{
     std::cout << "La moyenne de l'etudiant est : " << this->getAverage() << std::endl;
     std::cout << "La note minimale de l'etudiant est : " << this->getMin() << std::endl;
     std::cout << "La note maximale de l'etudiant est : " << this->getMax() << std::endl;

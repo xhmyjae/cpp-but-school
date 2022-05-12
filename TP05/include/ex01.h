@@ -11,7 +11,7 @@ namespace ex01NS {
     };
 
     class Personne {
-    private:
+    protected:
         int numero;
         std::string nom;
         Sexe sexe;
@@ -27,13 +27,14 @@ namespace ex01NS {
 
     class Etudiant : public Personne {
     private:
-        int * grades;
+        int grades[10];
     public:
-        Etudiant(int const&, std::string const&, Sexe, int*);
-        void afficherNote(int[10]);
-        float getAverage(int*, int);
-        int getMin(int*, int);
-        int getMax(int*, int);
+        Etudiant(int const& numero, std::string const& nom, Sexe sexe): Personne(numero, nom, sexe) {};
+        void rentrerNote();
+        void afficherNote();
+        float getAverage();
+        int getMin();
+        int getMax();
     };
 }
 

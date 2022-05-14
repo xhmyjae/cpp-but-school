@@ -2,20 +2,18 @@
 #define TP05_RECTANGLE_H
 
 #include <iostream>
-#include "IFormeGeometrique.h"
+#include "AFormeGeometrique.h"
 #include "../ex02.h"
 
 namespace PFormeGeometrique {
-    class Rectangle : public IFormeGeometrique {
-        private:
-            std::string nom;
+    class Rectangle : public AFormeGeometrique {
+        protected:
             double largeur;
             double longueur;
         public:
-            Rectangle(std::string, double, double);
+            Rectangle(std::string nom, double largeur, double longueur) : AFormeGeometrique(nom), largeur(largeur), longueur(longueur) {};
             double perimetre() const;
             void affichage() const;
-            std::string getNom() const;
             double surface() const;
             ~Rectangle() { DEBUG(" ~IFormeGeometrique() "); }
     };

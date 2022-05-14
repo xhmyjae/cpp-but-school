@@ -1,15 +1,6 @@
-#include "../include/PFormeGeometrique/Cercle.h"
+#include <utility>
 
-/**
- * Cree un nouveau cercle avec le nom et le rayon donnes
- *
- * @param nom Le nom du cercle.
- * @param rayon le rayon du cercle
- */
-PFormeGeometrique::Cercle::Cercle(std::string nom, double rayon) {
-    this->nom = nom;
-    this->rayon = rayon;
-}
+#include "../include/PFormeGeometrique/Cercle.h"
 
 /**
  * Renvoie le perimetre du cercle
@@ -25,15 +16,6 @@ double PFormeGeometrique::Cercle::perimetre() const {
  */
 void PFormeGeometrique::Cercle::affichage() const {
     std::cout << "Cercle " << this->nom << " de rayon " << this->rayon << " de perimetre " << this->perimetre() << std::endl;
-}
-
-/**
- * Renvoie le nom du cercle
- *
- * @return Le nom du cercle.
- */
-std::string PFormeGeometrique::Cercle::getNom() const {
-    return this->nom;
 }
 
 /**

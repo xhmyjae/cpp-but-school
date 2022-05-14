@@ -3,19 +3,17 @@
 
 #include <iostream>
 #include <numbers>
-#include "IFormeGeometrique.h"
+#include "AFormeGeometrique.h"
 #include "../ex02.h"
 
 namespace PFormeGeometrique {
-    class Cercle : public IFormeGeometrique {
+    class Cercle : public AFormeGeometrique {
         private:
-            std::string nom;
             double rayon;
         public:
-            Cercle(std::string, double);
+            Cercle(std::string nom, double rayon) : AFormeGeometrique(nom), rayon(rayon) {};
             double perimetre() const;
             void affichage() const;
-            std::string getNom() const;
             double surface() const;
             ~Cercle() { DEBUG(" ~IFormeGeometrique() "); }
     };

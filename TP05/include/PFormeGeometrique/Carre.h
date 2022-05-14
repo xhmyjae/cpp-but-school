@@ -4,20 +4,14 @@
 #include <iostream>
 #include <string>
 
-#include "IFormeGeometrique.h"
+#include "Rectangle.h"
 #include "../ex02.h"
 
 namespace PFormeGeometrique {
-    class Carre : public IFormeGeometrique {
-        private:
-            std::string nom;
-            double cote;
+    class Carre : public Rectangle {
         public:
-            Carre(std::string, double);
-            double perimetre() const;
+            Carre(std::string nom, double cote) : Rectangle(nom, cote, cote) {};
             void affichage() const;
-            std::string getNom() const;
-            double surface() const;
             ~Carre() { DEBUG(" ~IFormeGeometrique() "); }
     };
 };

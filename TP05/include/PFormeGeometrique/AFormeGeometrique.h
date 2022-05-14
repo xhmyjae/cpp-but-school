@@ -6,11 +6,11 @@
 
 namespace PFormeGeometrique {
     class AFormeGeometrique : public IFormeGeometrique {
+        protected:
+        std::string nom;
         public:
-            virtual double perimetre() const;
-            virtual void affichage() const;
+            AFormeGeometrique(const std::string);
             virtual std::string getNom() const;
-            virtual double surface() const;
             virtual ~AFormeGeometrique() { DEBUG(" ~IFormeGeometrique() "); }
     };
 };
